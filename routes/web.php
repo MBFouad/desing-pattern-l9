@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SingletonController;
+use App\Http\Controllers\FactoryAbstractController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::get('singleton', SingletonController::class);
+Route::get('factory-abstract', FactoryAbstractController::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\AsyncThreadService;
 use App\Services\SingletonService;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,6 @@ class SingletonController extends Controller
 {
     public function __invoke()
     {
-
         $objA = SingletonService::getInstance();
         $objA->addCount();
 
@@ -23,3 +23,5 @@ class SingletonController extends Controller
         return response()->json(['$objAOfUsers' => $objA->getCount(), '$objBOfUsers' => $objB->getCount()]);
     }
 }
+
+
