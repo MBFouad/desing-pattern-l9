@@ -33,6 +33,10 @@ jobs:
           name: "echo an env var that is part of our project"
           command: |
             echo $MY_NAME
+      - run:
+          name: "echo an env var that is part 2222  of our project"
+          command: |
+            echo $MY_ENV_VAR
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
