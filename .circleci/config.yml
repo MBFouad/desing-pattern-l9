@@ -34,11 +34,11 @@ jobs:
       - run:
           name: "echo an env var that is part of our project"
           command: |
-            echo $MY_NAME
+            echo ${MY_NAME}
       - run:
           name: "echo an env var that is part 2222  of our project"
           command: |
-            echo $MY_ENV_VARss
+            echo ${MY_ENV_VAR}
             
       - run:
           name: "Node"
