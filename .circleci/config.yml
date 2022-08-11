@@ -28,7 +28,10 @@ jobs:
     steps:
       - run:
           name: "Print world"
-          command: "echo print, World! ".$MY_NAME
+          command: "echo print, World! "
+      - run:
+          name: "echo an env var that is part of our project"
+          command: echo $MY_NAME
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
