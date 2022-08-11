@@ -43,7 +43,7 @@ jobs:
       - run:
           name: "Node"
           command: |
-            echo $NODE_ENV
+            echo ${NODE_ENV}
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
