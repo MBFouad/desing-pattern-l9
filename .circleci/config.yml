@@ -23,6 +23,8 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/base:stable
+    environment:
+      NODE_ENV: production
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -37,6 +39,11 @@ jobs:
           name: "echo an env var that is part 2222  of our project"
           command: |
             echo $MY_ENV_VARss
+            
+      - run:
+          name: "Node"
+          command: |
+            echo $NODE_ENV
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
