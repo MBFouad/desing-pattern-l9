@@ -6,7 +6,7 @@ version: 2.1
 defaults: &defaults
   docker:
     - image: cimg/base:stable
-  working_directory: .
+  working_directory: ~/project
   
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
