@@ -78,3 +78,7 @@ workflows:
       - print-world:
           requires:
             - say-hello
+      - save_hello_world_output
+      - save_hello_world_output:
+          requires:
+            - save_hello_world_output
