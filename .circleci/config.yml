@@ -3,7 +3,7 @@
 
 version: 2.1
 
-defaults: &defaults
+defaultsJob: &defaults
   docker:
     - image: cimg/base:stable
   working_directory: ~/project
