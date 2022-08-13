@@ -64,10 +64,6 @@ jobs:
     docker:
       - image: cimg/base:stable
     steps:
-      - run:
-          name: "Print before restore cache"
-          command: cat output.txt
-          
       - attach_workspace:
           at: .
           
