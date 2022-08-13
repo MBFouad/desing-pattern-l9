@@ -44,6 +44,30 @@ jobs:
           name: "Node"
           command: |
             echo ${NODE_ENV}
+  save_hello_world_output:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: "Type in file"
+          command: echo "text to output here 222222" > output.txt
+      - persist_to_workspace:
+          root: /tmp/workspace
+          paths:
+            - output.txt
+            
+  print_output_file:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - attach_workspace:
+          at: /tmp/workspace
+          paths:
+            - output.txt
+      - run:
+          name: "Print in file"
+          command: cat output.txt
+            
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
