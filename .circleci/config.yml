@@ -52,10 +52,10 @@ jobs:
           name: "Type in file"
           command: echo "text to output here 222222" > output.txt
       - run:
-          name: "make dir tmp"
-          command: mkdir /tmp/workspace
+          name: "check type successfully"
+          command: cat output.txt
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: .
           paths:
             - output.txt
             
@@ -65,9 +65,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - attach_workspace:
-          at: /tmp/workspace
-          paths:
-            - output.txt
+          at: .
+          
       - run:
           name: "Print in file"
           command: cat output.txt
