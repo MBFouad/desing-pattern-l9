@@ -85,7 +85,7 @@ jobs:
   test_faild_job:
     <<: *defaults
     steps:
-      - run: echo "text to output here 222ss222"
+#       - run: exit 1
       - run:
           name: on error
           command: echo "Hello Error!"
