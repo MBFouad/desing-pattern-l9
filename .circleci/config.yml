@@ -81,6 +81,17 @@ jobs:
       - run:
           name: "Print in file"
           command: cat output.txt
+          
+  test_faild_job:
+    <<: *defaults
+    steps:
+      - run: exit 1
+      - run:
+          name: on error
+          command: echo "Hello Error!"
+          when: on_fail
+        
+  
             
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -95,3 +106,4 @@ workflows:
       - print_output_file:
           requires:
             - save_hello_world_output
+      - test_faild_job
