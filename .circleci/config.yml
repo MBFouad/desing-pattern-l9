@@ -25,8 +25,7 @@ jobs:
   print-world:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
-    docker:
-      - image: cimg/base:stable
+    <<: *defaults
     environment:
       NODE_ENV: production
     # Add steps to the job
@@ -49,8 +48,7 @@ jobs:
           command: |
             echo ${NODE_ENV}
   save_hello_world_output:
-    docker:
-      - image: cimg/base:stable
+    <<: *defaults
     steps:
       - run:
           name: "Type in file"
@@ -65,8 +63,7 @@ jobs:
             
             
   print_output_file:
-    docker:
-      - image: cimg/base:stable
+    <<: *defaults
     steps:
       - attach_workspace:
           at: .
