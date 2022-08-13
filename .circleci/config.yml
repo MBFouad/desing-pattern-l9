@@ -51,6 +51,9 @@ jobs:
       - run:
           name: "Type in file"
           command: echo "text to output here 222222" > output.txt
+      - run:
+          name: "make dir tmp"
+          command: mkdir /tmp/workspace
       - persist_to_workspace:
           root: /tmp/workspace
           paths:
